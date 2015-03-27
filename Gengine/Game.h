@@ -12,14 +12,18 @@
 // Stds
 #include <stdlib.h>
 
+
 using namespace std;
 
 namespace Gengine
 {
+	
+
 	class Game
 	{
 	public:
-		Game(int width, int height);
+		Game(int width, int height, int maxfps);
+		Game();
 		virtual ~Game();
 
 		// Store game window width
@@ -33,7 +37,7 @@ namespace Gengine
 
 		// Gametime update
 		/// TODO: Add GameTime ticker as parameter with set value & so can use for logic
-		bool Update();
+		void GameLoop();
 
 		// Get rid of everything
 		void Dispose();
@@ -42,17 +46,18 @@ namespace Gengine
 		bool Init();
 
 		// Called on update, used to draw
-		bool Draw();
+		void Draw();
 
 		// Load media at the start
 		bool LoadMedia();
 
-		SDL_Renderer* Game::getRenderer() { return gRenderer; }
+		virtual SDL_Renderer* Game::getRenderer() { return gRenderer; }
 	private:
+		TTF_Font* gFont;
 		// The dude spritesheet
-		GTexture gSNGuy;
+		//GTexture gSNGuy;
 		// The background
-		GTexture gBackground;
+		//GTexture gBackground;
 		/// Window
 		SDL_Window* gWindow;
 		/// Surface on the window
@@ -60,5 +65,6 @@ namespace Gengine
 
 		// Renderer on the surface on the window
 		SDL_Renderer* gRenderer;
+
 	};
-};
+}

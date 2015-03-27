@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Gengine" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Gengine" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="msvc10" />
+				<Compiler>
+					<Add directory="../../SDL2_ttf2.0.12/include" />
+					<Add directory="../Gengine" />
+					<Add directory="../../SDL2_image/include" />
+					<Add directory="$(IncludePath)" />
+					<Add directory="../../SDL2.0.3/include" />
+				</Compiler>
+				<Linker>
+					<Add library="SDL2.lib" />
+					<Add library="SDL2main.lib" />
+					<Add library="SDL2_image.lib" />
+					<Add library="SDL2_ttf.lib" />
+					<Add directory="../../SDL2_ttf2.0.12/lib/x86" />
+					<Add directory="../../SDL2_image/lib/x86" />
+					<Add directory="../../SDL2.0.3/lib/x86" />
+					<Add directory="$(LibraryPath)" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Gengine" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Unit filename="Constants.h" />
+		<Unit filename="GActor.cpp" />
+		<Unit filename="GActor.h" />
+		<Unit filename="GBall.cpp" />
+		<Unit filename="GBall.h" />
+		<Unit filename="GButton.cpp" />
+		<Unit filename="GButton.h" />
+		<Unit filename="GPlayer.cpp" />
+		<Unit filename="GPlayer.h" />
+		<Unit filename="GTexture.cpp" />
+		<Unit filename="GTexture.h" />
+		<Unit filename="GTimer.cpp" />
+		<Unit filename="GTimer.h" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.h" />
+		<Unit filename="ImageFactory.cpp" />
+		<Unit filename="ImageFactory.h" />
+		<Unit filename="Match.cpp" />
+		<Unit filename="Match.h" />
+		<Unit filename="SDL2_image.dll" />
+		<Unit filename="Source.cpp" />
+		<Unit filename="TButton.cpp" />
+		<Unit filename="TButton.h" />
+		<Unit filename="libpng16-16.dll" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

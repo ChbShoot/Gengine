@@ -2,6 +2,8 @@
 #include <string>
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
+#include <Game.h>
 //#include <ImageFactory.h>
 #include <string>
 
@@ -10,6 +12,7 @@ namespace Gengine
 	class GTexture
 	{
 	public:
+
 		GTexture();
 		virtual ~GTexture();
 		// Disposes things
@@ -22,28 +25,39 @@ namespace Gengine
 		// angle - Rotation
 		// center - Center
 		// flip - Flip
-		void Render(SDL_Renderer* gRenderer, int x, int y, SDL_Rect* clip = NULL, double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE);
+		void Render(SDL_Renderer* gRenderer, int x, int y, double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE);
 		// Loads texture from file
 		bool LoadTexture(SDL_Renderer* gRenderer, std::string path);
 
+
+		bool LoadFromRenderedText(SDL_Renderer* gRenderer, TTF_Font* gFont, std::string textureText, SDL_Color colorText);
+
 		// Get texture width
-		int GTexture::getWidth();
+		int GetWidth() { return gWidth; }
 		// Get texture height
-		int GTexture::getHeight();
+		int GetHeight() { return gHeight; }
+
+		int GetFrame() { return gFrame; }
+
 
 		// Set blend mode
-		void GTexture::SetBlendMode(SDL_BlendMode blending);
+		void SetBlendMode(SDL_BlendMode blending);
 
 		// Set color morph
-		void GTexture::SetColor(Uint8 red, Uint8 green, Uint8 blue);
+		void SetColor(Uint8 red, Uint8 green, Uint8 blue);
 
 		// Set texture alpha
-		void GTexture::SetAlpha(Uint8 alpha);
-		std::string path;
+		void SetAlpha(Uint8 alpha);
+
+		// Set the animation clips
+		void SetClips(int cWidth, int cHeight);
 	private:
 		SDL_Texture* gTexture;
+		SDL_Rect gRectFrames[8];
 		int gWidth;
 		int gHeight;
+		int gFrame;
+		int gFrameTotal;
 	};
 }
 

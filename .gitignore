@@ -26,3 +26,13 @@
 *.exe
 *.out
 *.app
+*.tlog
+Chute/Chute.vcxproj.user
+*.filters
+Chute/Debug/Chute.Build.CppClean.log
+*.log
+Chute/Debug/vc120.idb
+*.pdb
+Gengine.psess
+*.suo
+Gengine/Debug/vc120.idb

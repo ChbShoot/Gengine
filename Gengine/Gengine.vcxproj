@@ -39,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\Projects\C++ Projects\Gengine\Gengine;D:\Tools\SDL2_image\include;D:\Tools\SDL2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Tools\SDL2_image\lib\x86;D:\Tools\SDL2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Tools\SDL2_ttf2.0.12\include;D:\Projects\C++ Projects\Gengine\Gengine;D:\Tools\SDL2_image\include;D:\Tools\SDL2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Tools\SDL2_ttf2.0.12\lib\x86;D:\Tools\SDL2_image\lib\x86;D:\Tools\SDL2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -50,8 +50,9 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
+      <Profile>true</Profile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -69,23 +70,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GActor.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GBall.cpp" />
+    <ClCompile Include="GButton.cpp" />
+    <ClCompile Include="GField.cpp" />
+    <ClCompile Include="GPlayer.cpp" />
     <ClCompile Include="GTexture.cpp" />
-    <ClCompile Include="ImageFactory.cpp" />
+    <ClCompile Include="GTimer.cpp" />
+    <ClCompile Include="Match.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="GActor.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GBall.h" />
+    <ClInclude Include="GField.h" />
+    <ClInclude Include="GPlayer.h" />
     <ClInclude Include="GTexture.h" />
-    <ClInclude Include="ImageFactory.h" />
+    <ClInclude Include="GTimer.h" />
+    <ClInclude Include="Match.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\Tools\sprites\shrektBg.png" />
+    <Image Include="..\..\..\..\Tools\sprites\spritesheetwalker.png" />
     <Image Include="background.png" />
     <Image Include="spritesheet.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="libpng16-16.dll" />
     <None Include="SDL2_image.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="lazy.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
